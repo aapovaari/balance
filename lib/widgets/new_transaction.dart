@@ -7,7 +7,9 @@ import '../providers/transaction_provider.dart';
 /// Sisältää tekstikentät kategorian ja summan syöttämiseen, sekä tallennuspainikkeen.
 /// Kun tallennuspainiketta painetaan, luodaan uusi Transaction-olio ja lisätään se transactionProvideriin.
 class NewTransaction extends ConsumerStatefulWidget {
-  const NewTransaction({super.key});
+  final TransactionType type;
+
+  const NewTransaction({super.key, required this.type});
 
   @override
   ConsumerState<NewTransaction> createState() => _NewTransactionState();
@@ -61,7 +63,7 @@ class _NewTransactionState extends ConsumerState<NewTransaction> {
                 category: categoryText,
                 amount: amountInCents,
                 date: DateTime.now(),
-                type: TransactionType.expense,
+                type: widget.type,
               );
               ref
                   .read(transactionProvider.notifier)

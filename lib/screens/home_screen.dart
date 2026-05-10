@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/transaction.dart';
 import '../providers/transaction_provider.dart';
+import '../widgets/add_transaction_buttons.dart';
 import '../widgets/balance_card.dart';
 import '../widgets/transaction_item.dart';
 
@@ -31,7 +32,7 @@ class HomeScreen extends ConsumerWidget {
         children: [
           Expanded(
             child: ListView.builder(
-              itemCount: transactions.length,
+              itemCount: transactions.length + 1, // +1 saldokortille
               itemBuilder: (context, index) {
                 if (index == 0) {
                   return Column(
@@ -62,11 +63,13 @@ class HomeScreen extends ConsumerWidget {
                     ],
                   );
                 }
-                final transaction = transactions[index];
+                final transaction =
+                    transactions[index - 1]; // -1 koska ensimmäinen on saldo
                 return TransactionItem(transaction: transaction);
               },
             ),
           ),
+          AddTransactionButtons(onAdd: () {}),
         ],
       ),
     );
