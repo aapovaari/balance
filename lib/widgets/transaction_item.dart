@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:balance/models/transaction.dart';
+import '../models/transaction.dart';
 
 /// Tämä widget näyttää yksittäisen tapahtuman.
 /// Se on kortti, joka sisältää tapahtuman kategorian, päivämäärän ja summan.

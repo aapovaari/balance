@@ -1,9 +1,9 @@
-import 'package:balance/models/transaction.dart';
-import 'package:balance/widgets/balance_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:balance/widgets/transaction_item.dart';
-import 'package:balance/providers/transaction_provider.dart';
+import '../models/transaction.dart';
+import '../providers/transaction_provider.dart';
+import '../widgets/balance_card.dart';
+import '../widgets/transaction_item.dart';
 
 /// Tämä on sovelluksen pääruutu, joka näyttää käyttäjälle saldon
 /// ja viimeisimmät tapahtumat.
