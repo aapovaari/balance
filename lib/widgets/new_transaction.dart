@@ -3,9 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/transaction.dart';
 import '../providers/transaction_provider.dart';
 
-/// Uuden tapahtuman syöttämiseen tarkoitettu widgetti.
-/// Sisältää tekstikentät kategorian ja summan syöttämiseen, sekä tallennuspainikkeen.
-/// Kun tallennuspainiketta painetaan, luodaan uusi Transaction-olio ja lisätään se transactionProvideriin.
+/// Tämä widget on modal bottom sheet, joka avautuu, kun käyttäjä haluaa lisätä uuden tapahtuman.
+/// Käyttäjä syöttää tapahtuman kategorian ja summan, ja tallentaan tapahtuman providerin kautta.
 class NewTransaction extends ConsumerStatefulWidget {
   final TransactionType type;
 

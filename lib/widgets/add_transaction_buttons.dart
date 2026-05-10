@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import '../models/transaction.dart';
 import '../widgets/new_transaction.dart';
 
-/// Tämä widget näyttää kaksi painiketta, joilla käyttäjä voi lisätä tuloja ja menoja.
+/// Tämä widget sisältää kaksi painiketta, joilla käyttäjä voi lisätä uuden tulon tai menon.
+/// Painikkeiden painalluksesta avautuu modal bottom sheet, jossa käyttäjä voi syöttää uuden tapahtuman tiedot.
 class AddTransactionButtons extends StatelessWidget {
   final VoidCallback onAdd;
 
