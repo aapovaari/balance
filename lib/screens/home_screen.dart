@@ -5,6 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:balance/widgets/transaction_item.dart';
 import 'package:balance/providers/transaction_provider.dart';
 
+/// Tämä on sovelluksen pääruutu, joka näyttää käyttäjälle saldon
+/// ja viimeisimmät tapahtumat.
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 

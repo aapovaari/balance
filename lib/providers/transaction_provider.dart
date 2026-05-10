@@ -1,6 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/transaction.dart';
 
+/// Tämä on tapahtumien provider, joka hallinnoi tapahtumien tilaa sovelluksessa.
+/// Se käyttää Riverpodin NotifierProvideria, joka tarjoaa reaktiivisen tavan hallita tilaa.
+/// Tapahtumat tallennetaan listana, ja provider tarjoaa metodin uuden tapahtuman lisäämiseen.
 class TransactionNotifier extends Notifier<List<Transaction>> {
   @override
   List<Transaction> build() {

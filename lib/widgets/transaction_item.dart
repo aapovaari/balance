@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:balance/models/transaction.dart';
 
+/// Tämä widget näyttää yksittäisen tapahtuman.
+/// Se on kortti, joka sisältää tapahtuman kategorian, päivämäärän ja summan.
+/// Tapahtuman tyyppi (tulo vai meno) määrittää kortin ulkoasun,
+/// kuten värit ja ikonit.
 class TransactionItem extends StatelessWidget {
   final Transaction transaction;
 

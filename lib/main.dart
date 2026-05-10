@@ -6,6 +6,9 @@ void main() {
   runApp(ProviderScope(child: const MainApp()));
 }
 
+/// Tämä on pääwidget, joka käynnistää sovelluksen. Se käyttää ProviderScopea,
+/// joka on Riverpodin tapa tarjota tilaa koko sovellukselle.
+/// MainApp on yksinkertainen MaterialApp, joka näyttää HomeScreenin.
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
