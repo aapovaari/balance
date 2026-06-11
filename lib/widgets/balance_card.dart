@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/amount_extension.dart';
 
 /// Tämä widget näyttää käyttäjän saldon. Se on yksinkertainen kortti,
 /// joka ottaa vastaan kokonaislukuna saldon sentteinä ja näyttää sen euroina.
@@ -23,8 +24,8 @@ class BalanceCard extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              '${(balance / 100).toStringAsFixed(2)} €',
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              balance.formattedAmount,
+              style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
           ],
         ),

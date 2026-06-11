@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../models/transaction.dart';
+import '../utils/amount_extension.dart';
 
 /// Tämä widget näyttää yksittäisen tapahtuman.
 /// Se on kortti, joka sisältää tapahtuman kategorian, päivämäärän ja summan.
@@ -33,8 +34,7 @@ class TransactionItem extends StatelessWidget {
         ),
         subtitle: Text(DateFormat('d.M.y').format(transaction.date)),
         trailing: Text(
-          // 4. Tässä on keksimäsi kaava yhdistettynä miinus/plus -merkkiin!
-          '${isIncome ? '+' : '-'} ${(transaction.amount / 100).toStringAsFixed(2)} €',
+          '${isIncome ? '+' : '-'} ${transaction.amount.formattedAmount}',
           style: TextStyle(
             color: isIncome ? Colors.green : Colors.red,
             fontWeight: FontWeight.bold,

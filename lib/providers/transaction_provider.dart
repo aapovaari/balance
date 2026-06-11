@@ -32,7 +32,24 @@ class TransactionNotifier extends Notifier<List<Transaction>> {
     ];
   }
 
-  void addTransaction(Transaction newTransaction) {
+  void addTransaction(
+    String categoryName,
+    String amountText,
+    TransactionType type,
+  ) {
+    final parsedDouble =
+        double.tryParse(amountText.replaceAll(',', '.')) ?? 0.0;
+
+    final amountInCents = (parsedDouble * 100).toInt();
+
+    final newTransaction = Transaction(
+      id: DateTime.now().toString(),
+      category: categoryName,
+      amount: amountInCents,
+      date: DateTime.now(),
+      type: type,
+    );
+
     state = [...state, newTransaction];
   }
 }

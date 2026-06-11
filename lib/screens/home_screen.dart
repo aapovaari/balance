@@ -69,7 +69,7 @@ class HomeScreen extends ConsumerWidget {
               },
             ),
           ),
-          AddTransactionButtons(onAdd: () {}),
+          AddTransactionButtons(),
         ],
       ),
     );

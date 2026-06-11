@@ -5,9 +5,7 @@ import '../widgets/new_transaction.dart';
 /// Tämä widget sisältää kaksi painiketta, joilla käyttäjä voi lisätä uuden tulon tai menon.
 /// Painikkeiden painalluksesta avautuu modal bottom sheet, jossa käyttäjä voi syöttää uuden tapahtuman tiedot.
 class AddTransactionButtons extends StatelessWidget {
-  final VoidCallback onAdd;
-
-  const AddTransactionButtons({super.key, required this.onAdd});
+  const AddTransactionButtons({super.key});
 
   @override
   Widget build(BuildContext context) {

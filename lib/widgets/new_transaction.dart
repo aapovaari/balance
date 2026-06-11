@@ -52,21 +52,9 @@ class _NewTransactionState extends ConsumerState<NewTransaction> {
               final categoryText = _categoryController.text;
               final amountText = _amountController.text;
 
-              final parsedDouble =
-                  double.tryParse(amountText.replaceAll(',', '.')) ?? 0.0;
-
-              final amountInCents = (parsedDouble * 100).toInt();
-
-              final newTransaction = Transaction(
-                id: DateTime.now().toString(),
-                category: categoryText,
-                amount: amountInCents,
-                date: DateTime.now(),
-                type: widget.type,
-              );
               ref
                   .read(transactionProvider.notifier)
-                  .addTransaction(newTransaction);
+                  .addTransaction(categoryText, amountText, widget.type);
               Navigator.of(context).pop();
             },
             child: const Text('Tallenna tapahtuma'),
